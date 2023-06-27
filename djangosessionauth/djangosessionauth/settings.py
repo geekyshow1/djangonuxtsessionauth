@@ -35,8 +35,10 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # 'django.middleware.cache.FetchFromCacheMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
+    # 'django.middleware.cache.UpdateCacheMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -174,3 +176,14 @@ CSRF_COOKIE_AGE = 60*60*24*14 # 14 days
 CSRF_USE_SESSIONS = False
 CSRF_COOKIE_SECURE = False  # For Production set True
 CSRF_COOKIE_HTTPONLY = False
+
+# # If you plan to store session data in cache instead database
+# SESSION_ENGINE = "django.contrib.sessions.backends.cache" 
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#         'LOCATION': 'auth_cache_new',
+#     }
+# }
+# CACHE_MIDDLEWARE_SECONDS = 30
