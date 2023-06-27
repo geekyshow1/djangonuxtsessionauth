@@ -1,3 +1,10 @@
 django_session table can become very large so it is must to clean this table time to time using below command. To automate this process, celery task or cron job can be used. Below command will clear all expired sessions
 
 python manage.py clearsessions
+
+
+For Session Expire at Browser Close
+django_session table can become very large so it is must to clean this table time to time using below command. To automate this process, celery task or cron job can be used. Below command will clear all expired sessions. Remember that python manage.py clearsessions command won't work in this case because we are expiring session id on browser close.
+
+python manage.py clean_expired_sessions
+

@@ -159,7 +159,10 @@ REST_FRAMEWORK = {
 }
 
 # Sessionid Expire default is 1209600 sec = 14 days
-SESSION_COOKIE_AGE = 1800   # 30 Min
+# SESSION_COOKIE_AGE = 1800   # 30 Min
+
+# Session Expire on Browser Close but Session will remain in DB
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 
 # When you using credential include in the frontend must include below line
