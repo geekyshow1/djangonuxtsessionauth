@@ -1,0 +1,3 @@
+django_session table can become very large so it is must to clean this table time to time using below command. To automate this process, celery task or cron job can be used. Below command will clear all expired sessions
+
+python manage.py clearsessions
